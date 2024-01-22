@@ -17,7 +17,7 @@ vector<string> wczytajHaslaZPliku(const string& nazwaPliku) {
         }
         plik.close();
     } else {
-        cerr << "Blad wczytywania hasel z pliku." << endl;
+        cout << "Blad wczytywania hasel z pliku." << endl;
     }
     return hasla;
 }
@@ -25,7 +25,7 @@ vector<string> wczytajHaslaZPliku(const string& nazwaPliku) {
 int liczbaHaselNumerycznych(const vector<string>& hasla) {
     int licznik = 0;
     for (const string& haslo : hasla) {
-        if (all_of(haslo.begin(), haslo.end(), ::isdigit)) {
+        if (all_of(haslo.begin(), haslo.end(), ::isdigit)) { //sprawdza by zobaczyc czy wszystkie znaki to cyfry
             licznik++;
     }
     }   
@@ -102,7 +102,7 @@ int main() {
         }
 
         //Zadanie 74.3
-        string fragment = "abcd";  
+        string fragment = "abcd";  // Dokończyć
         wyniki << "74.3. Liczba użytkowników posiadających hasła z fragmentem '" << fragment << "': "
                << liczbaUzytkownikowZFragmentem(hasla, fragment) << endl;
 
@@ -111,7 +111,7 @@ int main() {
 
         wyniki.close();
     } else {
-        cerr << "Błąd podczas otwierania pliku wynikowego." << endl;
+        cout << "Błąd podczas otwierania pliku wynikowego." << endl; 
     }
 
     return 0;
